@@ -12,6 +12,8 @@
   "description": "",
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "digital-book-solution": "file:",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-handlebars": "^8.0.1",
     "nodemon": "^3.1.9"
