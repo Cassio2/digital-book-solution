@@ -1,5 +1,4 @@
 
-
 :root {
     --primary: #174b7b;
     --secondary: #009970;
@@ -9,6 +8,10 @@
     --heading-color: #32353a;
   
   }
+  ul,li{
+    list-style: none;
+  }
+ 
   .navbarHome {
     background-color: transparent;
     transition: background-color 0.3s ease; /* Suavizar a transição */
@@ -200,9 +203,9 @@
     --white: rgba(248, 255, 229, 1);
   }
   
-  body{
+  /* .gridbooks{
     background-color: #182028;
-  }
+  } */
   
   .ul-gridbooks{
     display:grid;
