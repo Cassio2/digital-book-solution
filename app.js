@@ -13,6 +13,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', require('./routes/router'));  
+app.use('/livros', require('./routes/livrosRouter'));  
+
 
 
 
