@@ -136,7 +136,7 @@ const livros = [
     titulo: "A Mentalidade Anticapitalista",
     autor: "Ludwig Von Mises",
     preco: 2500,
-    capa: "",
+    capa: "https://m.media-amazon.com/images/I/61OKzvNgoaL._SY385_.jpg",
     categoria: "Economia e Finanças"
   },
   {
@@ -144,7 +144,7 @@ const livros = [
     titulo: "As Seis Lições",
     autor: "Ludwig Von Mises",
     preco: 2500,
-    capa: "",
+    capa: "https://livrariapublica.com.br/capa/as-seis-licoes-ludwig-von-mises-pdf-B07BZVXGYL.webp",
     categoria: "Economia e Finanças"
   },
   {
@@ -152,7 +152,7 @@ const livros = [
     titulo: "Eu Quero Ser Rico",
     autor: "Bastter",
     preco: 2500,
-    capa: "",
+    capa: "https://th.bing.com/th/id/R.e81d303ed43e6758f0c803e021b8ea45?rik=q4Edw6tXYteMPg&pid=ImgRaw&r=0",
     categoria: "Economia e Finanças"
   },
   {
@@ -160,7 +160,7 @@ const livros = [
     titulo: "Nós Queremos Que Você Fique Rico",
     autor: "Donald Trump & Robert Kiyosaki",
     preco: 2500,
-    capa: "",
+    capa: "https://altabooks.com.br/wp-content/uploads/2021/07/717x1000_QueremosVoceFiqueRico.jpg",
     categoria: "Economia e Finanças"
   },
   {
