@@ -76,6 +76,32 @@
         </nav>
     </div>
 
+    <!-- START COROUSEL -->
+<div class="hero">
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner height-50vh">
+      <div class="carousel-item active img22" data-bs-interval="10000">
+        <img src="/images/helo (1).jpg" class="d-block w-100 h-100 img-fluid" alt="..." />
+      </div>
+      <div class="carousel-item img22" data-bs-interval="2000">
+        <img src="/images/helo (2).jpg" class="d-block w-100 h-100 img-fluid" alt="..." />
+      </div>
+      <div class="carousel-item img22">
+        <img src="/images/helo (3).jpg" class="d-block w-100 h-100 img-fluid" alt="..." />
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</div>
+
     {{{body}}} <!-- O conteúdo da página será injetado aqui -->
 
 
@@ -133,5 +159,51 @@
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
    
 </body>
+
+
+    <script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filtroCategoria = document.getElementById('filtro-categoria');
+    const pesquisaTitulo = document.getElementById('pesquisa-titulo');
+    const livros = document.querySelectorAll('.livro-item');
+
+    // Mostrar inicialmente só os de "Gestão e Liderança"
+    livros.forEach(livro => {
+      const categoria = livro.dataset.categoria.toLowerCase();
+      if (categoria === "gestão e liderança") {
+        livro.style.display = 'block';
+      } else {
+        livro.style.display = 'none';
+      }
+    });
+
+    // Filtragem ao mudar categoria ou digitar
+    function filtrarLivros() {
+      const cat = filtroCategoria.value.toLowerCase();
+      const termo = pesquisaTitulo.value.toLowerCase();
+
+      livros.forEach(livro => {
+        const livroCategoria = livro.dataset.categoria.toLowerCase();
+        const livroTitulo = livro.dataset.titulo.toLowerCase();
+
+        const correspondeCategoria = cat === '' || livroCategoria.includes(cat);
+        const correspondeTitulo = livroTitulo.includes(termo);
+
+        if (correspondeCategoria && correspondeTitulo) {
+          livro.style.display = 'block';
+        } else {
+          livro.style.display = 'none';
+        }
+      });
+    }
+
+    filtroCategoria.addEventListener('change', filtrarLivros);
+    pesquisaTitulo.addEventListener('input', filtrarLivros);
+  });
+</script>
+
+</script>
+
 
 </html>

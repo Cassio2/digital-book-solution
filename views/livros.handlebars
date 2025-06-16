@@ -1,70 +1,45 @@
 <main id="main" class="main container">
-    <div class="row mb-3">
-        <h3>Listagens de Livros</h3>
-        <p>Veja todos os livros. Use os filtros abaixo para refinar os resultados.</p>
+
+
+ <section class="py-5 bg-light">
+  <div class="container">
+    <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <h2 class="fw-bold">📚 Catálogo de Livros</h2>
+
+      <div class="d-flex flex-wrap gap-3">
+        <select class="form-select" id="filtro-categoria" style="min-width: 200px;">
+          <option value="">Todas categorias</option>
+          {{#each categorias}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
+
+        <input type="text" class="form-control" id="pesquisa-titulo" placeholder="🔍 Procurar por título..." style="min-width: 250px;">
+      </div>
     </div>
 
-    <form method="GET" action="/relatorios/vendas/vendas_concluida" class="row g-3 mb-4">
-        <div class="col-md-2">
-            <label>Data Início</label>
-            <input type="date" name="inicio" value="{{filtros.inicio}}" class="form-control" />
-        </div>
-        <div class="col-md-2">
-            <label>Data Fim</label>
-            <input type="date" name="fim" value="{{filtros.fim}}" class="form-control" />
-        </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4" id="livros-lista">
 
-        <div class="col-md-2">
-            <label>Cliente</label>
-            <select name="clienteId" class="form-select">
-                <option value="">Todos</option>
-
-                <option>
-                    {{nome}}</option>
-
-            </select>
-        </div>
-        <div class="col-md-2">
-            <label>Produto</label>
-            <select name="produtoId" class="form-select">
-                <option value="">Todos</option>
-                {{#each produtos}}
-                <option value="{{produto_id}}">{{nome}}</option>
-                {{/each}}
-            </select>
-        </div>
-        <div class="col-md-2">
-            <label>Usuário</label>
-            <select name="usuarioId" class="form-select">
-                <option value="">Todos</option>
-                {{#each usuarios}}
-                <option value="{{user_id}}">{{nome}}</option>
-                {{/each}}
-            </select>
-        </div>
-        <div class="col-md-2 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary w-100">Filtrar</button>
-        </div>
-    </form>
-
-   <div id="livros" class="animateLado">
-  <div class="container-md ptb-100">
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-4 py-3">
       {{#each livros}}
-        <div class="col">
-          <a href="/livros/{{this.id}}" class="text-decoration-none">
-            <div class="card h-100 border-0 shadow-sm">
-              <img src="{{this.capa}}" class="card-img-top img-fluid rounded" alt="{{this.titulo}}">
-              <div class="card-body text-center p-2">
-                <h6 class="card-title mb-1 text-dark">{{this.titulo}}</h6>
-                <small class="text-muted">{{this.autor}}</small>
-              </div>
+        
+            <div class="col livro-item" data-categoria="{{this.categoria}}" data-titulo="{{this.titulo}}">
+          <div class="card h-100 shadow-sm border-0">
+            
+            <img src="{{this.capa}}" class="card-img-top livro-capa" alt="{{this.titulo}}">
+
+            <div class="card-body d-flex flex-column justify-content-between">
+              <p class="text-center fw-bold text-success mb-3">{{this.preco}} Kz</p>
+
+              <h6 class="card-title text-center fw-semibold mb-2">{{this.titulo}}</h6>
+              {{!-- <a href="/livros/{{this.id}}" class="btn btn-outline-primary btn-sm w-100 mt-auto">Ver detalhes</a> --}}
             </div>
-          </a>
+          </div>
         </div>
       {{/each}}
     </div>
   </div>
-</div>
+</section>
+
+
 
 </main>

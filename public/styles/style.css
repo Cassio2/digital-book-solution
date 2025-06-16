@@ -467,3 +467,13 @@
   
 }
 
+
+
+
+ .livro-capa {
+  height: 220px;
+  width: 100%;
+  object-fit: contain;
+  background-color: #f8f9fa; /* fundo leve caso haja espaço */
+  padding: 10px;
+}
